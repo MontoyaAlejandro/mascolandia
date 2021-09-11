@@ -1,0 +1,61 @@
+<html>
+<body>
+
+<h2>
+Formulario de Registro
+</h2>
+
+<form action="recoge_Datos.jsp" method="post">
+
+<table width="35%" border="0">
+	<tr>
+		<td width="17%"><label for="nombre"> Nombre: </label></td>
+		<td width="83%"><input type="text" name="nombre" id="nombre"></td>
+	</tr>	
+	<tr>
+		<td><label for="apellido"> Apellido: </label></td>
+		<td><input type="text" name="apellido" id="apellido"></td>
+	</tr>
+	<tr>
+		<td><label for="usuario"> Usuario: </label></td>
+		<td><input type="text" name="usuario" id="usuario"></td>
+	</tr>
+	<tr>
+		<td><label for="contra"> Contraseña: </label></td>
+		<td><input type="text" name="contra" id="contra"></td>
+	</tr>
+	<tr>
+		<td><label for="pais"> Pais: </label></td>
+		<td><select name="pais" id="pais">
+		<option>Colombia</option>
+		<option>Venezuela</option>
+		<option>Brasil</option>
+		<option>Uruguay</option>
+		<option>Argentina</option>
+		<option>Peru</option>
+		<option>Ecuador</option>	
+		</select></td>
+	</tr>
+	<tr>
+		<td>Tecnologias: </td>
+		<td>
+			<label>
+			<input type="radio" name="tecnologias" value="Java" id="tecnologia_0">
+			Java</label><br>
+			<label>
+			<input type="radio" name="tecnologias" value="PHP" id="tecnologia_1">
+			Php</label><br>
+			<label>
+			<input type="radio" name="tecnologias" value="JavaScript" id="tecnologia_2">
+			Php</label></td>
+	    </tr>
+	    <tr>
+	    	<td colspan="2" align="center"><input type="submit" name="botton" value="Enviar"></td>
+	    </tr>
+	</table>
+	<p><br>
+	</p>
+</form>
+
+</body>
+</html>
