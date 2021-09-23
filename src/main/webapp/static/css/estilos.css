@@ -15,10 +15,34 @@ button {
 .sBtn {
   text-align: left 40px;
   background-color: #910909;
- }
+}
 
 .sBtn:hover {
   background-color: #300404;
   height: 44px;
   width: 92%;
+}
+
+#cabecera {
+  background: rgb(188,210,226);
+  background: linear-gradient(90deg, rgba(188,210,226,1) 0%, rgba(0,212,255,1) 50%, rgba(2,0,36,0.8519782913165266) 97%);
+}
+
+#miLogo {
+  height: 200px;
+  width: 200px;
+  padding: 25px;
+}
+
+#piePagina {
+  height: 180px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+#titulo {
+  padding: 6%;
+  font-size: 60px;
+  color: black;
+  text-shadow: #272727d8 6px 6px 5px;
 }
