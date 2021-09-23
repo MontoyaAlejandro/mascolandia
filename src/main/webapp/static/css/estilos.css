@@ -1,115 +1,24 @@
-* {
-  padding: 0;
-  font-family: cursive;
-}
-
-body {
-  background-color: whitesmoke;
-}
-
-#cabecera {
-  width: 98%;
-  height: 180px;
-  margin: auto;
-  clear: both;
-  margin-bottom: 8px;
-}
-#eslogan {
-  color: #bd0808;
-  text-shadow: rgb(182, 75, 75) 2px 2px 3px;
-  font-family: cursive;
-  size: 40px;
-}
-
-#logo {
-  width: 15%;
-  height: 150px;
-  vertical-align: auto;
-}
-
-#titulo {
-  width: 80%;
-  height: 150px;
-  font-family: cursive;
-  size: 70px;
-  text-shadow: #494040 3px 3px 5px;
-}
-
-#ubicacion{
-  color: blue;
-}
-
-.caja {
-  float: left;
-  margin: 5px;
-  text-align: center;
-  vertical-align: auto;
-}
-
-#principal {
-  width: 100%;
-  height: 400px;
-  margin: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-#pie {
-  width: 98%;
-  height: 120px;
-  margin: auto;
-  text-align: center;
-  margin-top: 12px;
-}
-
-#menu_lateral {
-  width: 15%;
-  height: 100%;
-  border-radius: 8px;
-  margin-left: 15px;
-}
-
-#contenido {
-  width: 82%;
-  height: 100%;
-  border-radius: 8px;
-}
-
 button {
-  background-color: black;
-  font-size: 20px;
+  font-size: 23px;
   border-radius: 8px;
   width: 90%;
   height: 40px;
-  margin: 2px;
-  box-shadow: #bbb2b2d8 6px 6px 5px;
+  margin: 3px;
 }
 
-.bordefondo {
-  background-color: white;
-  box-shadow: #bbb2b2d8 6px 6px 5px;
-  border-radius: 8px;
+.bordeSombra {
+  margin-top: 12px;
+  border-radius: 10px;
+  box-shadow: #272727d8 6px 6px 5px;
 }
 
-table {
-  margin: 4px;
-  width: 99%;
-  border: 1px solid #000;
-}
-th,
-td {
-  width: 25%;
-  text-align: center;
-  vertical-align: top;
-  border: 1px solid #000;
-  border-collapse: collapse;
-  padding: 0.3em;
-}
-th {
-  background: #eee;
-}
+.sBtn {
+  text-align: left 40px;
+  background-color: #910909;
+ }
 
-a{
-  text-decoration: none;
-  color: white;
+.sBtn:hover {
+  background-color: #300404;
+  height: 44px;
+  width: 92%;
 }

@@ -11,12 +11,12 @@
   <body>
     <header id="cabecera" class="bordefondo">
       <div id="logo" class="caja">
-        <img src="static/imagenes/logo.png" width="140" />
+        <img src="static/imagenes/logo.jpeg" width="140" />
       </div>
       <div id="titulo" class="caja">
-        <h1>MASCOLANDIA</h1>
-        <h2 id="eslogan">Consintiendo a tus mejores amigos !</h2>
-        <h2 id="ubicacion">-> Clientes</h2>
+        <div id="tituloCabecera">MASCOLANDIA</div>
+        <div id="eslogan">Consintiendo a tus mejores amigos !</div>
+        <div id="ubicacionPagina">-> Clientes</div>
       </div>
     </header>
 
@@ -33,8 +33,40 @@
       </div>
 
       <div class="caja bordefondo" id="contenido">
-        <section>
-          <h1>Pagina Clientes !</h1>
+        <section class="bordefondo formularios">
+          <form>
+            <div>
+              <label class="labelF">Nombre del Cliente</label>
+              <input type="text" name="nombreC" class="inputF" />
+            </div>
+
+            <div>
+              <label class="labelF">Identificacion Cliente</label>
+              <input type="number" name="identfC" class="inputF" />
+            </div>
+
+            <div>
+              <label class="labelF">Telefono Cliente</label>
+              <input type="number" name="telefonoC" class="inputF" />
+            </div>
+
+            <div>
+              <label class="labelF">Email del Cliente</label>
+              <input type="email" name="emailC" class="inputF" />
+            </div>
+
+            <div>
+              <label class="labelF">Direccion del Cliente</label>
+              <input type="text" name="dieccionC" class="inputF" />
+            </div>
+
+            <div>
+              <label class="labelF">Notas Mascotas</label>
+              <input type="text" name="notasC" class="inputF" />
+            </div>
+
+            <button type="submit" id="btnRegistrar">Registrar</button>
+          </form>
         </section>
       </div>
     </section>
