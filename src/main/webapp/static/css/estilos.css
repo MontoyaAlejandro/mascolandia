@@ -1,11 +1,15 @@
 button {
-  font-size: 23px;
+  font-size: 18px;
   border-radius: 8px;
   width: 90%;
   height: 40px;
   margin: 3px;
 }
 
+body{
+
+  margin: 30px;
+}
 .bordeSombra {
   margin-top: 12px;
   border-radius: 10px;
@@ -13,25 +17,31 @@ button {
 }
 
 .sBtn {
-  text-align: left 40px;
-  background-color: #910909;
+  text-align: left 15px;
+  background-color: black;
+  
 }
 
 .sBtn:hover {
-  background-color: #300404;
+  background-color: gray;
   height: 44px;
   width: 92%;
 }
 
 #cabecera {
-  background: rgb(188,210,226);
-  background: linear-gradient(90deg, rgba(188,210,226,1) 0%, rgba(0,212,255,1) 50%, rgba(2,0,36,0.8519782913165266) 97%);
+  background: rgb(188, 210, 226);
+  background: linear-gradient(
+    90deg,
+    rgba(188, 210, 226, 1) 0%,
+    rgba(0, 212, 255, 1) 50%,
+    rgba(2, 0, 36, 0.8519782913165266) 97%
+  );
 }
 
 #miLogo {
-  height: 200px;
-  width: 200px;
-  padding: 25px;
+  height: 230px;
+  width: 230px;
+  padding: 30px;
 }
 
 #piePagina {
@@ -46,3 +56,9 @@ button {
   color: black;
   text-shadow: #272727d8 6px 6px 5px;
 }
+#slogan{
+  color: white;
+  font-size: 25px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

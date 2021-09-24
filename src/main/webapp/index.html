@@ -4,45 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="static/css/estilos.css" />
-    <title>Clientes</title>
+    <link rel="stylesheet" href="static/css/estiloindex.css" />
+    <link rel="stylesheet" href="static/css/bootstrap.css" />
+    <title>Document</title>
   </head>
-
   <body>
-    <header id="cabecera" class="bordefondo">
-      <div id="logo" class="caja">
-        <img src="static/imagenes/logo.jpeg" width="140" />
+    <div class="container" id="marco">
+      <div class="row">
+        <div class="col-12 text-center">
+          <img src="static/imagenes/logo.png" id="logoP" />
+        </div>
       </div>
-      <div id="titulo" class="caja">
-        <div id="tituloCabecera">MASCOLANDIA</div>
-        <div id="eslogan">Consintiendo a tus mejores amigos !</div>
-        <div id="ubicacionPagina">-> Index</div>
-      </div>
-    </header>
-
-    <section id="principal">
-      <div class="caja bordefondo" id="menu_lateral">
-        <br />
-        <button><a href="index.html">Ir a Inicio</a></button>
-        <button><a href="productos.html">Productos</a></button>
-        <button><a href="clientes.html">Clientes</a></button>
-        <button><a href="ventas.html">Ventas</a></button>
-        <button><a href="informes.html">Informes</a></button>
-        <button><a href="usuarios.html">Usuarios</a></button>
-        <button><a href="index.html">Salir</a></button>
+      <div class="row">
+        <div class="col-12 text-center fw-bold" id="titulo">
+          Mascolandia
+          <p id="slogan">Esta es la casa de tu mejor amigo!</p>
+        </div>
       </div>
 
-      <div class="caja bordefondo" id="contenido">
-        <section>
-          <h1>Pagina Inicio !</h1>
-      
-        </section>
-      </div>
-    </section>
+      <div class="row text-center">
+        <div class="col-4"></div>
 
-    <footer id="pie" class="bordefondo">
-      <h2>Todos los derechos reservados</h2>
-      <h4>Sofware creado por el grupo 5 de S46</h4>
-    </footer>
+        <div class="col-4">
+          <form action="" id="fregistro">
+
+            <div class="row fw-bold">
+
+              <div class="col-4 text-end">
+                <label class="labelS" for="">Usuario: </label>
+              </div>
+
+              <div class="col-8 text-start">
+                <input type="text" class="inputF" />
+              </div>
+
+            </div>
+
+            <div class="row fw-bold">
+
+              <div class="col-4 text-end">
+                <label class="labelS" for="">Contraseña: </label>
+              </div>
+
+              <div class="col-8 text-start">
+                <input type="password" class="inputF" />
+              </div>
+
+            </div>
+
+            <button id="btnIngresar"><a class=" text-white text-decoration-none" href="home.html">Ingresar</a></button>
+           
+          </form>
+        </div>
+
+        <div class="col-4"></div>
+      </div>
+    </div>
+    <link rel="stylesheet" href="static/js/bootstrap.js" />
   </body>
 </html>

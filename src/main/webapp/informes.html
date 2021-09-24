@@ -4,45 +4,83 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="static/css/estilos.css" />
-    <title>Clientes</title>
+    <link rel="stylesheet" href="static/css/bootstrap.css" />
+    <link rel="stylesheet" href="static/css/estilos.css" />
+    <title>Document</title>
   </head>
-
   <body>
-    <header id="cabecera" class="bordefondo">
-      <div id="logo" class="caja">
-        <img src="static/imagenes/logo.jpeg" width="140" />
+    <!--Inicio del Container-->
+    <div class="container">
+      <!--Inicio de la cabecera-->
+      <div class="row bordeSombra" id="cabecera">
+        <div class="col-4 text-center">
+          <figure class="figure" id="miLogo">
+            <img
+              src="static/imagenes/logo.png"
+              class="figure-img img-fluid rounded"
+            />
+          </figure>
+        </div>
+        <div class="col-8 text-center fw-bold" id="titulo">
+          Mascolandia
+          <p id="slogan">Esta es la casa de tu mejor amigo!</p>
+        </div>
       </div>
-      <div id="titulo" class="caja">
-        <div id="tituloCabecera">MASCOLANDIA</div>
-        <div id="eslogan">Consintiendo a tus mejores amigos !</div>
-        <div id="ubicacionPagina">-> Informes</div>
+
+      <!--Inicio cuerpo-->
+      <div class="row bordeSombra" id="cuerpo">
+        <div class="col-2" id="menus">
+          <button class="bordeSombra sBtn">
+            <a class="text-white text-decoration-none" href="home.html"
+              >Ir a Inicio</a
+            >
+          </button>
+          <button class="bordeSombra sBtn">
+            <a class="text-white text-decoration-none" href="productos.html"
+              >Productos</a
+            >
+          </button>
+          <button class="bordeSombra sBtn">
+            <a class="text-white text-decoration-none" href="clientes.html"
+              >Clientes</a
+            >
+          </button>
+          <button class="bordeSombra sBtn">
+            <a class="text-white text-decoration-none" href="ventas.html"
+              >Ventas</a
+            >
+          </button>
+          <button class="bordeSombra sBtn">
+            <a class="text-white text-decoration-none" href="informes.html"
+              >Informes</a
+            >
+          </button>
+          <button class="bordeSombra sBtn">
+            <a class="text-white text-decoration-none" href="usuarios.html"
+              >Usuarios</a
+            >
+          </button>
+          <button class="bordeSombra sBtn">
+            <a class="text-white text-decoration-none" href="index.html"
+              >Salir</a
+            >
+          </button>
+        </div>
+
+        <!--Espacio para los contenidos-->
+        <div class="col-10 text-center" id="contenidos">
+          <h1>INFORMES</h1>
+        </div>
       </div>
-    </header>
 
-    <section id="principal">
-      <div class="caja bordefondo" id="menu_lateral">
-        <br />
-        <button><a href="index.html">Ir a Inicio</a></button>
-        <button><a href="productos.html">Productos</a></button>
-        <button><a href="clientes.html">Clientes</a></button>
-        <button><a href="ventas.html">Ventas</a></button>
-        <button><a href="informes.html">Informes</a></button>
-        <button><a href="usuarios.html">Usuarios</a></button>
-        <button><a href="index.html">Salir</a></button>
-      </div>>
-
-      <div class="caja bordefondo" id="contenido">
-        <section>
-          <h1>Pagina Informes!</h1>
-      
-        </section>
+      <!--Inicio pie de Pagina-->
+      <div class="row text-center bordeSombra" id="piePagina">
+        <h3>Todos los derechos reservados</h3>
+        <h5>Sofware creado por el grupo 5 de S46</h5>
       </div>
-    </section>
+      <!--Fin del Container-->
+    </div>
 
-    <footer id="pie" class="bordefondo">
-      <h2>Todos los derechos reservados</h2>
-      <h4>Sofware creado por el grupo 5 de S46</h4>
-    </footer>
+    <link rel="stylesheet" href="static/js/bootstrap.js" />
   </body>
 </html>
