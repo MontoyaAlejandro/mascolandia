@@ -11,4 +11,32 @@ package Modelos;
  */
 public class Login {
     
+                //ATRIBUTOS 
+    private String nombreUsuario; 
+    private String contrasenaUsuario; 
+
+    public Login(){
+        
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public String getContrasenaUsuario() {
+        return contrasenaUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public void setContrasenaUsuario(String contrasenaUsuario) {
+        this.contrasenaUsuario = contrasenaUsuario;
+    }
+    
+            //METODOS 
+    public void IngresarUsuario(){
+        
+    }
 }
