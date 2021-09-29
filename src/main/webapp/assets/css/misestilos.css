@@ -1,5 +1,8 @@
-button {
-    margin: 8px;
+.miboton {
+    margin-top: 5px;
+    border-radius: 7px;
+    margin-bottom: 8px;
+    box-shadow: 5px 5px 5px;
 }
 
 body {
@@ -44,4 +47,8 @@ body {
 
 .fondo {
     background-color: aliceblue;
+}
+
+.sombras {
+    text-shadow: 6px 6px 8px;
 }
