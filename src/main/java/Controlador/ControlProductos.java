@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Modelos.Productos;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 @WebServlet(name = "ControlProductos", urlPatterns = {"/ControlProductos"})
 public class ControlProductos extends HttpServlet {
@@ -66,7 +68,7 @@ public class ControlProductos extends HttpServlet {
                 String mensaje = "<html> <body>"
                         + " <script type='text/javaScript'> "
                         + "      alert('Producto insertado con exito!'); "
-                        + "      window.location.href='index.jsp'"
+                        + "      window.location.href='productos.jsp'"
                         + "</script> </body> </html>";
 
                 out.println(mensaje);
@@ -75,6 +77,37 @@ public class ControlProductos extends HttpServlet {
             System.out.println("Error ControlProductos: " + error);
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------
+    }
+    
+        public ArrayList listar(){
+        try {
+            ResultSet consulta = objProducto.listarProducto(); 
+            ArrayList<Productos> listaProducto = new ArrayList<>(); 
+            
+            while(consulta.next()){
+                
+                objProducto = new Productos(); 
+                
+                objProducto.setId_Producto(consulta.getString(1));               
+                objProducto.setNombre_Producto(consulta.getString(2));
+                objProducto.setMedida_Unidad(consulta.getString(3));
+                objProducto.setSeccion(consulta.getString(4));
+                objProducto.setNit_Proveedor(consulta.getInt(5));
+                objProducto.setPrecio_Compra(consulta.getInt(6));
+                objProducto.setPrecio_Venta(consulta.getInt(7));
+                objProducto.setStock(consulta.getInt(8));
+                objProducto.setImpuestos(consulta.getInt(9));
+             
+                listaProducto.add(objProducto); 
+            }
+            
+            return listaProducto; 
+            
+        } catch (Exception error) {
+            System.out.println("Error Controlador:" + error);
+        }
+ 
+        return null;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

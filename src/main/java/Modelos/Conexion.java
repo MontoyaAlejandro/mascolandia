@@ -16,7 +16,7 @@ public class Conexion {
 
     public Connection conn;
     private String host = "localhost:3306";
-    private String dataBase = "moscolandia";
+    private String dataBase = "mascolandia";
     private String user = "root";
     private String password = "";
 

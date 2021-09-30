@@ -1,6 +1,7 @@
 package Modelos;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Productos {
 
@@ -99,12 +100,9 @@ public class Productos {
     // Metodos de clase
     //-----------------------------------------------------------------------------------------------------------------------
     public void Crear_Producto() {
-
         Conexion objConector = new Conexion();
         objConector.conectar();
-
-        try {
-            
+        try {            
             String sql = "INSERT INTO productos VALUES(?,?,?,?,?,?,?,?,?);";
             PreparedStatement stmt;
             stmt = objConector.conn.prepareStatement(sql);
@@ -117,19 +115,30 @@ public class Productos {
             stmt.setInt(7, this.stock);
             stmt.setInt(8, this.nit_Proveedor);
             stmt.setInt(9, this.impuestos);
-
             stmt.execute();
-
-            objConector.desconectar();
-            
+            objConector.desconectar();            
         } catch (Exception error) {
             System.out.println("Error ModeloProductos: " + error);
         }
-
-    }
-    
+    }    
     //----------------------------------------------------------------------------------------------------------------------------
-
+        public ResultSet listarProducto(){
+        Conexion objConector = new Conexion(); 
+        objConector.conectar();
+        try {            
+            String sql = "SELECT * FROM productos; ";
+            PreparedStatement stmt; 
+            stmt = objConector.conn.prepareStatement(sql); 
+            ResultSet consulta = stmt.executeQuery(); 
+            objConector.desconectar();
+            return consulta;             
+        } catch (Exception error) {
+            System.out.println("Error Modelo: "+error);
+        }
+         return null;        
+    }    
+    //-----------------------------------------------------------------------------------------------------------------------------------
+    
     public void Consultar_Producto() {
 
     }
