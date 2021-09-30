@@ -68,26 +68,30 @@
                                     <input type="text " class="form-control " id="codigoProducto " placeholder="Codigo Producto " name="codigo_Producto" required="">
                                     <label for="floatingInput ">Codigo de Producto:</label>
                                 </div>
+                                
+                                
+                                
+                                <!--Aqui hay un error   -------------------------------------------------------------------------------------------->
                                 <div class="form-floating mimargen ">
-                                    <select class="form-select " id="unidadMedida " aria-label="Floating label select example" name="unidad_Medida">
+                                    <select class="form-select " id="unidades " aria-label="Floating label select example" name="medida_Unidad">
                                         <option selected>Unidad</option>
-                                        <option value="1 ">Libra</option>
-                                        <option value="2 ">Kilo</option>
-                                        <option value="3 ">Docena</option>
-                                        <option value="4 ">Bulto</option>
-                                        <option value="5 ">Caja</option>
-                                        <option value="6 ">Gramos</option>
-                                        <option value="7 ">Paquete</option>
+                                        <option value="Kilo">Kilo</option>
+                                        <option value="Libra">Libra</option>
+                                        <option value="Bulto">Bulto</option>
+                                        <option value="Caja">Caja</option>
                                     </select>
                                     <label for="floatingSelect ">Unidad de Medida</label>
                                 </div>
+                                <!--Aqui hay un error   -------------------------------------------------------------------------------------------->
+                                
+                                
                                 <div class="form-floating mimargen ">
                                     <select class="form-select " id="seccion " aria-label="Floating label select example" name="seccion">
                                         <option selected>Alimentos</option>
-                                        <option value="1 ">Ascesorios</option>
-                                        <option value="2 ">Juguetes</option>
-                                        <option value="3 ">Ropa</option>
-                                        <option value="4 ">Aseo</option>
+                                        <option value="Ascesorios">Ascesorios</option>
+                                        <option value="Jugetes">Jugetes</option>
+                                        <option value="Ropa">Ropa</option>
+                                        <option value="Aseo">Aseo</option>
                                     </select>
                                     <label for="floatingSelect ">Seccion</label>
                                 </div>
@@ -115,7 +119,7 @@
                                     <label for="floatingInput ">Precio de Compra:</label>
                                 </div>
                                 <div class="form-floating mimargen ">
-                                    <input type="number " class="form-control " id="precioVenta " placeholder="Precio Venta " name="pecio_Venta" required="">
+                                    <input type="number " class="form-control " id="precioVenta " placeholder="Precio Venta " name="precio_Venta" required="">
                                     <label for="floatingInput ">Precio de Venta:</label>
                                 </div>
                                 <div class="form-floating mimargen ">
@@ -128,7 +132,7 @@
                         </div>
                         <div class="row align-bottom center">
                             <center>
-                                <button class="btn btn-success btnSize my-4" name="btnInsertarProducto" value="InsertarProducto">Insertar Producto</button>
+                                <button class="btn btn-success btnSize my-4" name="btnAccion" value="Insertar">Insertar Producto</button>
                             </center>
                         </div>
                     </form>
@@ -162,8 +166,8 @@
                                     <td>254</td>
                                     <td>5%</td>
                                     <td>
-                                        <button type="button " class="btn btn-outline-success btn-sm ">Actualizar</button>
-                                        <button type="button " class="btn btn-outline-danger btn-sm ">Eliminar</button>
+                                        <button type="button" class="btn btn-outline-success btn-sm ">Actualizar</button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm ">Eliminar</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -177,8 +181,8 @@
                                     <td>203</td>
                                     <td>5%</td>
                                     <td>
-                                        <button type="button " class="btn btn-outline-success btn-sm ">Actualizar</button>
-                                        <button type="button " class="btn btn-outline-danger btn-sm ">Eliminar</button>
+                                        <button type="button" class="btn btn-outline-success btn-sm ">Actualizar</button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm ">Eliminar</button>
                                     </td>
                                 </tr>
                                 <tr>

@@ -11,8 +11,8 @@ import Modelos.Productos;
 
 @WebServlet(name = "ControlProductos", urlPatterns = {"/ControlProductos"})
 public class ControlProductos extends HttpServlet {
-    
-    Productos objProducto = new Productos(); 
+
+    Productos objProducto = new Productos();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,21 +28,28 @@ public class ControlProductos extends HttpServlet {
         //-------------------------------------------------------------------------------------------------------------------------------------
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String accion = request.getParameter("btnInsertarProducto");
-
-            if (accion.equals("InsertarProducto")) {
-      
+            String accion = request.getParameter("btnAccion");
+            System.out.println(accion);
+            if (accion.equals("Insertar")) {
 
                 String id_Producto = request.getParameter("codigo_Producto");
+                System.out.println(id_Producto);
                 String nombre_Producto = request.getParameter("nombre_Producto");
+                System.out.println(nombre_Producto);
                 String medida_Unidad = request.getParameter("medida_Unidad");
+                System.out.println(medida_Unidad);
                 String seccion = request.getParameter("seccion");
+                System.out.println(seccion);
                 int nit_Proveedor = Integer.parseInt(request.getParameter("nit_Proveedor"));
+                System.out.println(nit_Proveedor);
                 int precio_Compra = Integer.parseInt(request.getParameter("precio_Compra"));
+                System.out.println(precio_Compra);
                 int precio_Venta = Integer.parseInt(request.getParameter("precio_Venta"));
+                System.out.println(precio_Venta);
                 int stock = Integer.parseInt(request.getParameter("stock"));
-                int impuestos = Integer.parseInt(request.getParameter("impuestos"));               
-                
+                System.out.println(stock);
+                int impuestos = Integer.parseInt(request.getParameter("impuestos"));
+                System.out.println(impuestos);
 
                 objProducto.setId_Producto(id_Producto);
                 objProducto.setNombre_Producto(nombre_Producto);
@@ -53,7 +60,6 @@ public class ControlProductos extends HttpServlet {
                 objProducto.setPrecio_Venta(precio_Venta);
                 objProducto.setStock(stock);
                 objProducto.setImpuestos(impuestos);
-                
 
                 objProducto.Crear_Producto();
 
@@ -63,7 +69,7 @@ public class ControlProductos extends HttpServlet {
                         + "      window.location.href='index.jsp'"
                         + "</script> </body> </html>";
 
-                out.println (mensaje);
+                out.println(mensaje);
             }
         } catch (Exception error) {
             System.out.println("Error ControlProductos: " + error);
