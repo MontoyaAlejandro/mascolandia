@@ -52,3 +52,6 @@ body {
 .sombras {
     text-shadow: 6px 6px 8px;
 }
+.btnSize {
+    width: 350px
+}

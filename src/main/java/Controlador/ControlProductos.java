@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import java.io.IOException;
@@ -12,13 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Modelos.Productos;
 
-/**
- *
- * @author A_Montoya
- */
 @WebServlet(name = "ControlProductos", urlPatterns = {"/ControlProductos"})
 public class ControlProductos extends HttpServlet {
+    
+    Productos objProducto = new Productos(); 
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,19 +25,50 @@ public class ControlProductos extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        //-------------------------------------------------------------------------------------------------------------------------------------
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ControlProductos</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ControlProductos at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String accion = request.getParameter("btnInsertarProducto");
+
+            if (accion.equals("InsertarProducto")) {
+      
+
+                String id_Producto = request.getParameter("codigo_Producto");
+                String nombre_Producto = request.getParameter("nombre_Producto");
+                String medida_Unidad = request.getParameter("medida_Unidad");
+                String seccion = request.getParameter("seccion");
+                int nit_Proveedor = Integer.parseInt(request.getParameter("nit_Proveedor"));
+                int precio_Compra = Integer.parseInt(request.getParameter("precio_Compra"));
+                int precio_Venta = Integer.parseInt(request.getParameter("precio_Venta"));
+                int stock = Integer.parseInt(request.getParameter("stock"));
+                int impuestos = Integer.parseInt(request.getParameter("impuestos"));               
+                
+
+                objProducto.setId_Producto(id_Producto);
+                objProducto.setNombre_Producto(nombre_Producto);
+                objProducto.setMedida_Unidad(medida_Unidad);
+                objProducto.setSeccion(seccion);
+                objProducto.setNit_Proveedor(nit_Proveedor);
+                objProducto.setPrecio_Compra(precio_Compra);
+                objProducto.setPrecio_Venta(precio_Venta);
+                objProducto.setStock(stock);
+                objProducto.setImpuestos(impuestos);
+                
+
+                objProducto.Crear_Producto();
+
+                String mensaje = "<html> <body>"
+                        + " <script type='text/javaScript'> "
+                        + "      alert('Producto insertado con exito!'); "
+                        + "      window.location.href='index.jsp'"
+                        + "</script> </body> </html>";
+
+                out.println (mensaje);
+            }
+        } catch (Exception error) {
+            System.out.println("Error ControlProductos: " + error);
         }
+        //--------------------------------------------------------------------------------------------------------------------------------------------
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
