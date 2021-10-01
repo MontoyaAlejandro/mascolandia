@@ -73,6 +73,7 @@
             <br>
             <br>
         </div>
+        <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>
 

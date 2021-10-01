@@ -52,7 +52,7 @@
         <div class="container-fluid miborde my-4 py-3 fondo">
             <form method="POST" action="ControlProductos"> 
                 <div class="row align-items-center">
-                    
+
                     <div class="col">
                         <label class="form-label fw-bold">Id</label>
                         <input type="text " class="form-control form-control-sm" id="codigoProducto " name="codigo_Producto" required="">
@@ -120,7 +120,7 @@
             </form> 
         </div> 
         <!-- Inicio del Formulario Ingreso de Productos --------------------------------------------------------------------------------------------------  -->
-        
+
         <!--Inicio de la tabla ------------------------------------------------------------------------------------------------------------------------------->
         <div class="container-fluid miborde my-4 px-5">
             <table class="table table-hover ">
@@ -166,7 +166,7 @@
             </table>
         </div>
         <!--  Fin de la tabla -------------------------------------------------------------------------------------------------------------------------------------------------->
-        
+
         <!-- Inicio Pie de Pagina ---------------------------------------------------------------------------------------------------------------------------------------------->
         <div class="container-fluid " id="piepagina">
             <div class="row text-center ">
@@ -177,10 +177,10 @@
             </div>
         </div>
         <!-- Fin  Pie de Pagina ------------------------------------------------------------------------------------------------------------------------------------------------->
-        
-        
+
+
         <!--Enlace Boostrap-->
-        <link rel="stylesheet " href="static/js/bootstrap.js " />
+        <link rel="stylesheet " href="assets/js/bootstrap.js " />
     </body>
 
 </html>

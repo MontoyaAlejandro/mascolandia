@@ -21,7 +21,6 @@ public class Productos {
     }
 
     // Inicio Getter and Setters ---------------------------------------------
-
     public String getId_Producto() {
         return id_Producto;
     }
@@ -93,57 +92,100 @@ public class Productos {
     public void setImpuestos(int impuestos) {
         this.impuestos = impuestos;
     }
-    
 
     // Fin Getter and Setters ------------------------------------------
-    
     // Metodos de clase
     //-----------------------------------------------------------------------------------------------------------------------
     public void Crear_Producto() {
         Conexion objConector = new Conexion();
         objConector.conectar();
-        try {            
+        try {
             String sql = "INSERT INTO productos VALUES(?,?,?,?,?,?,?,?,?);";
             PreparedStatement stmt;
             stmt = objConector.conn.prepareStatement(sql);
             stmt.setString(1, this.id_Producto);
-            stmt.setString(2, this.seccion);            
+            stmt.setString(2, this.seccion);
             stmt.setString(3, this.nombre_Producto);
-            stmt.setString(4, this.medida_Unidad);           
+            stmt.setString(4, this.medida_Unidad);
             stmt.setInt(5, this.precio_Compra);
             stmt.setInt(6, this.precio_Venta);
             stmt.setInt(7, this.stock);
             stmt.setInt(8, this.nit_Proveedor);
             stmt.setInt(9, this.impuestos);
             stmt.execute();
-            objConector.desconectar();            
+            objConector.desconectar();
         } catch (Exception error) {
             System.out.println("Error ModeloProductos: " + error);
         }
-    }    
-    //----------------------------------------------------------------------------------------------------------------------------
-        public ResultSet listarProducto(){
-        Conexion objConector = new Conexion(); 
-        objConector.conectar();
-        try {            
-            String sql = "SELECT * FROM productos; ";
-            PreparedStatement stmt; 
-            stmt = objConector.conn.prepareStatement(sql); 
-            ResultSet consulta = stmt.executeQuery(); 
-            objConector.desconectar();
-            return consulta;             
-        } catch (Exception error) {
-            System.out.println("Error Modelo: "+error);
-        }
-         return null;        
-    }    
-    //-----------------------------------------------------------------------------------------------------------------------------------
-    
-    public void Consultar_Producto() {
+    }
 
+    //----------------------------------------------------------------------------------------------------------------------------
+    public ResultSet listarProducto() {
+        Conexion objConector = new Conexion();
+        objConector.conectar();
+        try {
+            String sql = "SELECT * FROM productos; ";
+            PreparedStatement stmt;
+            stmt = objConector.conn.prepareStatement(sql);
+            ResultSet consulta = stmt.executeQuery();
+            objConector.desconectar();
+            return consulta;
+        } catch (Exception error) {
+            System.out.println("Error Modelo: " + error);
+        }
+        return null;
+    }
+    //-----------------------------------------------------------------------------------------------------------------------------------
+
+    public ResultSet Consultar_Producto() {
+
+        Conexion objConector = new Conexion();
+        objConector.conectar();
+        try {
+            String sql = "SELECT * FROM productos WHERE id_Producto = ? ; ";
+            PreparedStatement stmt;
+            stmt = objConector.conn.prepareStatement(sql);
+            stmt.setString(1, this.id_Producto);
+            ResultSet consulta = stmt.executeQuery();
+            objConector.desconectar();
+            return consulta;
+        } catch (Exception error) {
+            System.out.println("Error Modelo: " + error);
+        }
+        return null;
     }
 
     public void Editar_Producto() {
+
+        Conexion objConector = new Conexion();
+        objConector.conectar();
+        try {
+            String sql = "UPDATE productos SET "
+                    + "nombre_Producto = ?, "
+                    + "precio_Compra = ?, "
+                    + "precio_Venta = ?, "
+                    + "unidad_Medida = ?, "
+                    + "seccion = ?, "
+                    + "stock = ?, "
+                    + "nit_Proveedor = ?, "
+                    + "impuestos = ? "
+                    + "WHERE id_Producto = ?; ";
+            PreparedStatement stmt;
+            stmt = objConector.conn.prepareStatement(sql);
+            stmt.setString(9, this.id_Producto);
+            stmt.setString(5, this.seccion);
+            stmt.setString(1, this.nombre_Producto);
+            stmt.setString(4, this.medida_Unidad);
+            stmt.setInt(2, this.precio_Compra);
+            stmt.setInt(3, this.precio_Venta);
+            stmt.setInt(6, this.stock);
+            stmt.setInt(7, this.nit_Proveedor);
+            stmt.setInt(8, this.impuestos);
+            stmt.execute();
+            objConector.desconectar();
+        } catch (Exception error) {
+            System.out.println("Error ModeloProductos: " + error);
+        }
 
     }
 

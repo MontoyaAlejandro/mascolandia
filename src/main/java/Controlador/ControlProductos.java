@@ -73,6 +73,50 @@ public class ControlProductos extends HttpServlet {
 
                 out.println(mensaje);
             }
+            
+            else if (accion.equals("Actualizar")) {
+
+                String id_Producto = request.getParameter("codigo_Producto");
+                System.out.println(id_Producto);
+                String nombre_Producto = request.getParameter("nombre_Producto");
+                System.out.println(nombre_Producto);
+                String medida_Unidad = request.getParameter("medida_Unidad");
+                System.out.println(medida_Unidad);
+                String seccion = request.getParameter("seccion");
+                System.out.println(seccion);
+                int nit_Proveedor = Integer.parseInt(request.getParameter("nit_Proveedor"));
+                System.out.println(nit_Proveedor);
+                int precio_Compra = Integer.parseInt(request.getParameter("precio_Compra"));
+                System.out.println(precio_Compra);
+                int precio_Venta = Integer.parseInt(request.getParameter("precio_Venta"));
+                System.out.println(precio_Venta);
+                int stock = Integer.parseInt(request.getParameter("stock"));
+                System.out.println(stock);
+                int impuestos = Integer.parseInt(request.getParameter("impuestos"));
+                System.out.println(impuestos);
+
+                objProducto.setId_Producto(id_Producto);
+                objProducto.setNombre_Producto(nombre_Producto);
+                objProducto.setMedida_Unidad(medida_Unidad);
+                objProducto.setSeccion(seccion);
+                objProducto.setNit_Proveedor(nit_Proveedor);
+                objProducto.setPrecio_Compra(precio_Compra);
+                objProducto.setPrecio_Venta(precio_Venta);
+                objProducto.setStock(stock);
+                objProducto.setImpuestos(impuestos);
+
+                objProducto.Editar_Producto();
+
+                String mensaje = "<html> <body>"
+                        + " <script type='text/javaScript'> "
+                        + "      alert('Producto actualizado con exito!'); "
+                        + "      window.location.href='productos.jsp'"
+                        + "</script> </body> </html>";
+
+                out.println(mensaje);
+            }            
+            
+            
         } catch (Exception error) {
             System.out.println("Error ControlProductos: " + error);
         }
@@ -110,6 +154,39 @@ public class ControlProductos extends HttpServlet {
         return null;
     }
 
+        public ArrayList consultar(String id_Producto){
+        try {
+            objProducto.setId_Producto(id_Producto);
+            ResultSet consulta = objProducto.Consultar_Producto(); 
+            ArrayList<Productos> listaProducto = new ArrayList<>(); 
+            
+            while(consulta.next()){
+                
+                objProducto = new Productos(); 
+                
+                objProducto.setId_Producto(consulta.getString(1));               
+                objProducto.setNombre_Producto(consulta.getString(2));
+                objProducto.setMedida_Unidad(consulta.getString(3));
+                objProducto.setSeccion(consulta.getString(4));
+                objProducto.setNit_Proveedor(consulta.getInt(5));
+                objProducto.setPrecio_Compra(consulta.getInt(6));
+                objProducto.setPrecio_Venta(consulta.getInt(7));
+                objProducto.setStock(consulta.getInt(8));
+                objProducto.setImpuestos(consulta.getInt(9));
+             
+                listaProducto.add(objProducto); 
+            }
+            
+            return listaProducto; 
+            
+        } catch (Exception error) {
+            System.out.println("Error Controlador:" + error);
+        }
+ 
+        return null;
+    }        
+        
+        
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
