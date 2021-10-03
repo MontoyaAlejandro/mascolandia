@@ -17,6 +17,18 @@
 
     <body>
 
+        <script type="text/javascript">
+            function confirmar() {
+                var respuesta = confirm("Esta seguro que quiere borrar el producto?");
+                if (respuesta === true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+        </script>
+
         <!--Inicio de la Cabecera------------------------------------------------------------------------------------------>
         <div class="container-fluid " id="cabecera">
             <div class="row">
@@ -60,7 +72,7 @@
 
                     <div class="col">
                         <label class="form-label fw-bold">Medida</label>
-                        <select class="form-select form-select-sm" aria-label="Default select example" name="medida_Unidad">
+                        <select class="form-select form-select-sm" aria-label="Default select example" name="medida_Unidad" required="">
                             <option value="Unidad">Unidad</option>
                             <option value="Gramos">Gramos</option>
                             <option value="Libra">Libra</option>
@@ -74,7 +86,7 @@
 
                     <div class="col">
                         <label class="form-label fw-bold">Seccion</label>
-                        <select class="form-select form-select-sm" aria-label="Default select example" name="seccion">
+                        <select class="form-select form-select-sm" aria-label="Default select example" name="seccion" required="">
                             <option value="Alimentos">Alimentos</option>
                             <option value="Ascesorios">Ascesorios</option>
                             <option value="Jugetes">Jugetes</option>
@@ -157,7 +169,7 @@
                         <td><%=listaProducto.get(i).getImpuestos()%></td>        
                         <td>                      
                             <a href="actualizar.jsp?codigoProducto=<%=listaProducto.get(i).getId_Producto()%>"><button type="button" class="btn btn-outline-success btn-sm ">Actualizar</button></a>                                    
-                            <a href="ControlProducto?codigoProducto=<%=listaProducto.get(i).getId_Producto()%>"><button type="button" class="btn btn-outline-danger btn-sm ">Eliminar</button></a>
+                            <a href="ControlProductos?id_Producto=<%=listaProducto.get(i).getId_Producto()%>&btnAccion=Eliminar"><button type="button" class="btn btn-outline-danger btn-sm" onclick = "return confirmar();">Eliminar</button></a>
 
                         </td>
                     </tr> 

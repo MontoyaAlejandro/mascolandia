@@ -34,7 +34,7 @@ public class ControlProductos extends HttpServlet {
             System.out.println(accion);
             if (accion.equals("Insertar")) {
 
-                String id_Producto = request.getParameter("codigo_Producto");
+                String id_Producto = request.getParameter("id_Producto");
                 System.out.println(id_Producto);
                 String nombre_Producto = request.getParameter("nombre_Producto");
                 System.out.println(nombre_Producto);
@@ -72,11 +72,9 @@ public class ControlProductos extends HttpServlet {
                         + "</script> </body> </html>";
 
                 out.println(mensaje);
-            }
-            
-            else if (accion.equals("Actualizar")) {
+            } else if (accion.equals("Actualizar")) {
 
-                String id_Producto = request.getParameter("codigo_Producto");
+                String id_Producto = request.getParameter("id_Producto");
                 System.out.println(id_Producto);
                 String nombre_Producto = request.getParameter("nombre_Producto");
                 System.out.println(nombre_Producto);
@@ -114,25 +112,52 @@ public class ControlProductos extends HttpServlet {
                         + "</script> </body> </html>";
 
                 out.println(mensaje);
-            }            
-            
-            
+                
+            } else if (accion.equals("Eliminar")) {
+
+                String id_Producto = request.getParameter("id_Producto");
+                System.out.println(id_Producto);
+
+                String respuesta = objProducto.Eliminar_Producto();
+
+                if (respuesta == null) {
+
+                    String mensaje = "<html> <body>"
+                            + " <script type='text/javaScript'> "
+                            + "      alert('Producto eliminado con exito!'); "
+                            + "      window.location.href='productos.jsp'"
+                            + "</script> </body> </html>";
+
+                    out.println(mensaje);
+                }
+                    else {
+       
+                    String mensaje = "<html> <body>"
+                            + " <script type='text/javaScript'> "
+                            + "      alert('Error en la eliminación'); "
+                            + "      window.location.href='productos.jsp'"
+                            + "</script> </body> </html>";
+
+                    out.println(mensaje);
+                }
+            }
+
         } catch (Exception error) {
             System.out.println("Error ControlProductos: " + error);
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------
     }
-    
-        public ArrayList listar(){
+
+    public ArrayList listar() {
         try {
-            ResultSet consulta = objProducto.listarProducto(); 
-            ArrayList<Productos> listaProducto = new ArrayList<>(); 
-            
-            while(consulta.next()){
-                
-                objProducto = new Productos(); 
-                
-                objProducto.setId_Producto(consulta.getString(1));               
+            ResultSet consulta = objProducto.listarProducto();
+            ArrayList<Productos> listaProducto = new ArrayList<>();
+
+            while (consulta.next()) {
+
+                objProducto = new Productos();
+
+                objProducto.setId_Producto(consulta.getString(1));
                 objProducto.setNombre_Producto(consulta.getString(2));
                 objProducto.setMedida_Unidad(consulta.getString(3));
                 objProducto.setSeccion(consulta.getString(4));
@@ -141,30 +166,30 @@ public class ControlProductos extends HttpServlet {
                 objProducto.setPrecio_Venta(consulta.getInt(7));
                 objProducto.setStock(consulta.getInt(8));
                 objProducto.setImpuestos(consulta.getInt(9));
-             
-                listaProducto.add(objProducto); 
+
+                listaProducto.add(objProducto);
             }
-            
-            return listaProducto; 
-            
+
+            return listaProducto;
+
         } catch (Exception error) {
             System.out.println("Error Controlador:" + error);
         }
- 
+
         return null;
     }
 
-        public ArrayList consultar(String id_Producto){
+    public ArrayList consultar(String id_Producto) {
         try {
             objProducto.setId_Producto(id_Producto);
-            ResultSet consulta = objProducto.Consultar_Producto(); 
-            ArrayList<Productos> listaProducto = new ArrayList<>(); 
-            
-            while(consulta.next()){
-                
-                objProducto = new Productos(); 
-                
-                objProducto.setId_Producto(consulta.getString(1));               
+            ResultSet consulta = objProducto.Consultar_Producto();
+            ArrayList<Productos> listaProducto = new ArrayList<>();
+
+            while (consulta.next()) {
+
+                objProducto = new Productos();
+
+                objProducto.setId_Producto(consulta.getString(1));
                 objProducto.setNombre_Producto(consulta.getString(2));
                 objProducto.setMedida_Unidad(consulta.getString(3));
                 objProducto.setSeccion(consulta.getString(4));
@@ -173,20 +198,19 @@ public class ControlProductos extends HttpServlet {
                 objProducto.setPrecio_Venta(consulta.getInt(7));
                 objProducto.setStock(consulta.getInt(8));
                 objProducto.setImpuestos(consulta.getInt(9));
-             
-                listaProducto.add(objProducto); 
+
+                listaProducto.add(objProducto);
             }
-            
-            return listaProducto; 
-            
+
+            return listaProducto;
+
         } catch (Exception error) {
             System.out.println("Error Controlador:" + error);
         }
- 
+
         return null;
-    }        
-        
-        
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

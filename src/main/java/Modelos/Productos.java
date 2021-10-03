@@ -189,20 +189,22 @@ public class Productos {
 
     }
 
-    public void Eliminar_Producto() {
+    public String Eliminar_Producto() {
 
-    }
-
-    public void Ingresar_Producto() {
-
-    }
-
-    public void Generar_Pedido() {
-
-    }
-
-    public void Generar_Informe() {
-
-    }
-
+        Conexion objConector = new Conexion();
+        objConector.conectar();
+        try {
+             String sql = "DELETE FROM productos "+
+                         "WHERE id_Producto = ?; "; 
+            PreparedStatement stmt;
+            stmt = objConector.conn.prepareStatement(sql);
+            stmt.setString(1, this.id_Producto);
+            stmt.execute();
+            objConector.desconectar();
+        } catch (Exception error) {
+            System.out.println("Error ModeloProductos: " + error);
+                        return error.toString(); 
+        }
+        return null; 
+        }
 }
